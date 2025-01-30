@@ -59,10 +59,7 @@ gcov_report:
 	./$(FILEREPORT)
 	mkdir $(DIRREPORT)
 	gcovr --html-details --exclude $(FILETEST) -o $(DIRREPORT)/report.html
-	#lcov -r test.info $(FILTER)  -o test.info
-	#genhtml -o $(DIRREPORT) test.info
 	rm -rf *.o *.a *.gcno *.gcda *.info *.log $(FILETESTO) $(FILEREPORT)
-	#$(OPEN_CMD) $(DIRREPORT)/index.html
 	$(OPEN_CMD) $(DIRREPORT)/report.html
 
 rep: gcov_report
